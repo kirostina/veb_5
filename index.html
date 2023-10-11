@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="section">
+      <label for="length">Довжина:</label>
+      <input type="text" id="length" oninput="calcRect()" />
+      <br />
+      <label for="width">Ширина:</label>
+      <input type="text" id="width" oninput="calcRect()" />
+      <br />
+
+      <p>Периметр: <span id="prmtr">0</span></p>
+      <p>Площа: <span id="area">0</span></p>
+      <p>Довжина діагоналі: <span id="diagonal">0</span></p>
+    </section>
+    <section class="section">
+      <div class="chat-container">
+        <div class="chat-box" id="user1Chat"></div>
+        <div class="chat-box" id="user2Chat"></div>
+      </div>
+      <div class="users">
+        <div>
+          <input
+            type="text"
+            id="user1Input"
+            class="user-input"
+            placeholder="User1"
+          />
+          <button
+            class="btn"
+            onclick="sendMessage('user1Input', 'user1Chat', 'Ann')"
+          >
+            Надіслати
+          </button>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="user2Input"
+            class="user-input"
+            placeholder="User2"
+          />
+          <button
+            class="btn"
+            onclick="sendMessage('user2Input', 'user2Chat', 'Kris')"
+          >
+            Надіслати
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <label for="ukrainianText">Український текст:</label>
+      <input type="text" id="ukrainianText" oninput="transliterate()" />
+
+      <label for="transliteratedText">Транслітерований текст:</label>
+      <input type="text" id="transliteratedText" readonly />
+    </section>
+    <section class="section">
+      <form id="birthForm">
+        <label for="year">Рік:</label>
+        <input type="text" id="year" name="year" />
+        <br />
+        <label for="month">Місяць (1-12):</label>
+        <input type="text" id="month" name="month" />
+        <br />
+        <label for="day">День (1-31):</label>
+        <input type="text" id="day" name="day" />
+        <br />
+        <button id="calculateButton">Обчислити</button>
+      </form>
+      <p>День тижня: <span id="dayOfWeek"></span></p>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
